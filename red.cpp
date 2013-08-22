@@ -93,13 +93,7 @@ int main()
     //prints tracks info....
     cvShowImage("red_object_tracking", frame); //it displays image in specified window...
      
-    /*std::stringstream filename;
-    filename << "redobject_" << std::setw(5) << std::setfill('0') << frameNumber << ".png";
-    cvSaveImage(filename.str().c_str(), frame);*/
-    //blob = blobs[cvGreaterBlob(blobs)];
-    //here code for the centroid ...
-    //x = blob->m10/blob->area;
-    //y = blob->m01/blob->area;
+    
     
     CvBlobs::const_iterator it=blobs.begin();
     //blob=(CvBlob *)malloc(1000*sizeof(CvBlob));
@@ -162,31 +156,6 @@ int main()
       case 'Q':
         quit = true;
         break;// it quits...
-      /*case 's':
-      case 'S':
-        for (CvBlobs::const_iterator it=blobs.begin(); it!=blobs.end(); ++it) // for loop..initialize with bloblist beginning...goes till the end of the list...
-        {
-          
-          //std::stringstream filename; //declaring stringstream...using for the images name
-          //filename << "redobject_blob_" << std::setw(5) << std::setfill('0') << blobNumber << ".png";// frst sets width=5 den fillsin '0' den blobnumber..all is set in its name...
-          //cvSaveImageBlob(filename.str().c_str(), img, it->second); //here it clicks the image from the video streaming in thru camera....
-          //blobNumber++;// here it increases the blob number for different images...
-
-          //std::cout << filename.str() << " saved!" << std::endl;  //output the string for the file and then line ends...
-        }
-        break;
-        case 'm':
-        while(k!='q')
-        {
-        fflush(stdin);
-        for (CvBlobs::const_iterator it=blobs.begin(); it!=blobs.end(); ++it)
-        {	blob=it->second;
-  		cout << "Blob #" << blob->label << endl;
-  		cout << " - Centroid     = (" << blob->centroid.x << ", " << blob->centroid.y << ")" << endl;
-  		mouse(blob->centroid.x, blob->centroid.y);
-        }
-        }
-        break;*/
     }
     cout<<"working"<<endl;
     //cvReleaseBlob(blob);
