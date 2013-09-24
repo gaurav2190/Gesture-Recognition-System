@@ -6,7 +6,7 @@ Gesture Recognition System is used to recognize the gestures to execute specific
 Description
 -----------
 
-It is program which helps in detecting the colored blobs to process the functions.
+It is a program which helps in detecting the colored blobs to process the functions.
 
 
 Requirements
@@ -19,6 +19,13 @@ Requirements
 
 OpenCV-2.4.0 libraries above can be installed using instruction given on site- www.opencv.willowgarage.com .
 
+For cvblob library:
+-Download the cvblob library from the link :https://code.google.com/p/cvblob/ to your home directory.
+-After that extract it in the same directory.
+-Then enter into the extracted directory.
+-Enter "make" command in the terminal and press enter.
+-copy the output file "libblob.a" to the /usr/local/lib/ .
+-register the new library by typing ldconfig and press enter.
 
 Compilation instructions
 ------------------------
