@@ -38,7 +38,7 @@ event.xbutton.window = event.xbutton.subwindow;
 XQueryPointer(display, event.xbutton.window, &event.xbutton.root, &event.xbutton.subwindow, &event.xbutton.x_root, &event.xbutton.y_root, &event.xbutton.x, &event.xbutton.y, &event.xbutton.state);
 }
 
-if(XSendEvent(display, PointerWindow, True, 0xfff, &event) == 0) fprintf(stderr, "Errore nell'invio dell'evento !!!\n");
+if(XSendEvent(display, PointerWindow, True, 0xfff, &event) == 0) fprintf(stderr, "Error!!!\n");
 
 XFlush(display);
 
@@ -47,7 +47,7 @@ usleep(100000);
 event.type = ButtonRelease;
 event.xbutton.state = 0x100;
 
-if(XSendEvent(display, PointerWindow, True, 0xfff, &event) == 0) fprintf(stderr, "Errore nell'invio dell'evento !!!\n");
+if(XSendEvent(display, PointerWindow, True, 0xfff, &event) == 0) fprintf(stderr, "Error !!!\n");
 
 XFlush(display);
 
