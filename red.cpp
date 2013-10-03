@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-//if windows and specified os
+//if windows and other operating systems
 #if (defined(_WIN32) || defined(__WIN32__) || defined(__TOS_WIN__) || defined(__WINDOWS__) || (defined(__APPLE__) & defined(__MACH__)))
 #include <cv.h>
 #include <highgui.h>
@@ -21,9 +21,11 @@ int main()
    
   cvNamedWindow("red_object_tracking", CV_WINDOW_AUTOSIZE); //window
   cvMoveWindow("red_object_tracking", 0,0);
+  //cvNamedWindow("segmentated", CV_WINDOW_AUTOSIZE); //creates window
+  //cvMoveWindow("segmentated", 450,0); // moves window to a new position
 
   CvCapture *capture = cvCaptureFromCAM(0); //getting video from camera to videocapture structure...
-//baically it is uses to grab frame fast important for sync.
+//basically it is used to grab frame fast important for sync.
   cvGrabFrame(capture); // from camera or avi...
   IplImage *img = cvRetrieveFrame(capture); //following cvRetrieveFrame function which gets image grabbed by the  cvGrabFrame and pointers to that image...
    //it stores the image size...
@@ -93,7 +95,7 @@ int main()
     //prints tracks info....
     cvShowImage("red_object_tracking", frame); //it displays image in specified window...
      
-    
+    //cvShowImage("binary", segmentated); 
     
     CvBlobs::const_iterator it=blobs.begin();
     //blob=(CvBlob *)malloc(1000*sizeof(CvBlob));
